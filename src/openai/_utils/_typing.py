@@ -29,7 +29,7 @@ def is_list_type(typ: type) -> bool:
 def is_iterable_type(typ: type) -> bool:
     """If the given type is `typing.List[T]`"""
     origin = get_origin(typ) or typ
-    return origin == List or origin == _c_abc.List
+    return origin == List or origin == _c_abc.Iterable
 
 
 def is_union_type(typ: type) -> bool:
