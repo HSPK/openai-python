@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Union, Iterable
+from typing import Union, List
 from typing_extensions import Literal, Required, TypeAlias, TypedDict
 
 from .easy_input_message_param import EasyInputMessageParam
@@ -70,7 +70,7 @@ class ComputerCallOutput(TypedDict, total=False):
     id: str
     """The ID of the computer tool call output."""
 
-    acknowledged_safety_checks: Iterable[ComputerCallOutputAcknowledgedSafetyCheck]
+    acknowledged_safety_checks: List[ComputerCallOutputAcknowledgedSafetyCheck]
     """
     The safety checks reported by the API that have been acknowledged by the
     developer.

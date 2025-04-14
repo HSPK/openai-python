@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Union, Iterable
+from typing import Union, List
 from typing_extensions import Literal, Required, TypeAlias, TypedDict
 
 from .comparison_filter import ComparisonFilter
@@ -13,7 +13,7 @@ Filter: TypeAlias = Union[ComparisonFilter, object]
 
 
 class CompoundFilter(TypedDict, total=False):
-    filters: Required[Iterable[Filter]]
+    filters: Required[List[Filter]]
     """Array of filters to combine.
 
     Items can be `ComparisonFilter` or `CompoundFilter`.

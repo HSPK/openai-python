@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Union, Iterable
+from typing import Union, List
 from typing_extensions import Literal, Required, TypeAlias, TypedDict
 
 from .response_output_text_param import ResponseOutputTextParam
@@ -17,7 +17,7 @@ class ResponseOutputMessageParam(TypedDict, total=False):
     id: Required[str]
     """The unique ID of the output message."""
 
-    content: Required[Iterable[Content]]
+    content: Required[List[Content]]
     """The content of the output message."""
 
     role: Required[Literal["assistant"]]

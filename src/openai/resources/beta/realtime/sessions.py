@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import List, Union, Iterable
+from typing import List, Union, List
 from typing_extensions import Literal
 
 import httpx
@@ -63,7 +63,7 @@ class Sessions(SyncAPIResource):
         output_audio_format: Literal["pcm16", "g711_ulaw", "g711_alaw"] | NotGiven = NOT_GIVEN,
         temperature: float | NotGiven = NOT_GIVEN,
         tool_choice: str | NotGiven = NOT_GIVEN,
-        tools: Iterable[session_create_params.Tool] | NotGiven = NOT_GIVEN,
+        tools: List[session_create_params.Tool] | NotGiven = NOT_GIVEN,
         turn_detection: session_create_params.TurnDetection | NotGiven = NOT_GIVEN,
         voice: Union[
             str, Literal["alloy", "ash", "ballad", "coral", "echo", "fable", "onyx", "nova", "sage", "shimmer", "verse"]
@@ -229,7 +229,7 @@ class AsyncSessions(AsyncAPIResource):
         output_audio_format: Literal["pcm16", "g711_ulaw", "g711_alaw"] | NotGiven = NOT_GIVEN,
         temperature: float | NotGiven = NOT_GIVEN,
         tool_choice: str | NotGiven = NOT_GIVEN,
-        tools: Iterable[session_create_params.Tool] | NotGiven = NOT_GIVEN,
+        tools: List[session_create_params.Tool] | NotGiven = NOT_GIVEN,
         turn_detection: session_create_params.TurnDetection | NotGiven = NOT_GIVEN,
         voice: Union[
             str, Literal["alloy", "ash", "ballad", "coral", "echo", "fable", "onyx", "nova", "sage", "shimmer", "verse"]

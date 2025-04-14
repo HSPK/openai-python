@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import List, Union, Iterable, Optional
+from typing import List, Union, List, Optional
 from typing_extensions import Literal, Required, TypedDict
 
 from ..shared_params.metadata import Metadata
@@ -54,7 +54,7 @@ class JobCreateParams(TypedDict, total=False):
     in favor of `method`, and should be passed in under the `method` parameter.
     """
 
-    integrations: Optional[Iterable[Integration]]
+    integrations: Optional[List[Integration]]
     """A list of integrations to enable for your fine-tuning job."""
 
     metadata: Optional[Metadata]

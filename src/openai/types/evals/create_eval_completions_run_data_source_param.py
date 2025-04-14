@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Dict, Union, Iterable, Optional
+from typing import Dict, Union, List, Optional
 from typing_extensions import Literal, Required, TypeAlias, TypedDict
 
 from ..shared_params.metadata import Metadata
@@ -79,7 +79,7 @@ InputMessagesTemplateTemplate: TypeAlias = Union[
 
 
 class InputMessagesTemplate(TypedDict, total=False):
-    template: Required[Iterable[InputMessagesTemplateTemplate]]
+    template: Required[List[InputMessagesTemplateTemplate]]
     """A list of chat messages forming the prompt or context.
 
     May include variable references to the "item" namespace, ie {{item.name}}.
@@ -107,7 +107,7 @@ class SourceFileContentContent(TypedDict, total=False):
 
 
 class SourceFileContent(TypedDict, total=False):
-    content: Required[Iterable[SourceFileContentContent]]
+    content: Required[List[SourceFileContentContent]]
     """The content of the jsonl file."""
 
     type: Required[Literal["file_content"]]

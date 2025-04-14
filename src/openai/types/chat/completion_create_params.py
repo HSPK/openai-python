@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Dict, List, Union, Iterable, Optional
+from typing import Dict, List, Union, List, Optional
 from typing_extensions import Literal, Required, TypeAlias, TypedDict
 
 from ..shared.chat_model import ChatModel
@@ -34,7 +34,7 @@ __all__ = [
 
 
 class CompletionCreateParamsBase(TypedDict, total=False):
-    messages: Required[Iterable[ChatCompletionMessageParam]]
+    messages: Required[List[ChatCompletionMessageParam]]
     """A list of messages comprising the conversation so far.
 
     Depending on the [model](https://platform.openai.com/docs/models) you use,
@@ -84,7 +84,7 @@ class CompletionCreateParamsBase(TypedDict, total=False):
     functions are present.
     """
 
-    functions: Iterable[Function]
+    functions: List[Function]
     """Deprecated in favor of `tools`.
 
     A list of functions the model may generate JSON inputs for.
@@ -263,7 +263,7 @@ class CompletionCreateParamsBase(TypedDict, total=False):
     are present.
     """
 
-    tools: Iterable[ChatCompletionToolParam]
+    tools: List[ChatCompletionToolParam]
     """A list of tools the model may call.
 
     Currently, only functions are supported as a tool. Use this to provide a list of

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import array
 import base64
-from typing import List, Union, Iterable, cast
+from typing import List, Union, List, cast
 from typing_extensions import Literal
 
 import httpx
@@ -47,7 +47,7 @@ class Embeddings(SyncAPIResource):
     def create(
         self,
         *,
-        input: Union[str, List[str], Iterable[int], Iterable[Iterable[int]]],
+        input: Union[str, List[str], List[int], List[List[int]]],
         model: Union[str, EmbeddingModel],
         dimensions: int | NotGiven = NOT_GIVEN,
         encoding_format: Literal["float", "base64"] | NotGiven = NOT_GIVEN,
@@ -162,7 +162,7 @@ class AsyncEmbeddings(AsyncAPIResource):
     async def create(
         self,
         *,
-        input: Union[str, List[str], Iterable[int], Iterable[Iterable[int]]],
+        input: Union[str, List[str], List[int], List[List[int]]],
         model: Union[str, EmbeddingModel],
         dimensions: int | NotGiven = NOT_GIVEN,
         encoding_format: Literal["float", "base64"] | NotGiven = NOT_GIVEN,

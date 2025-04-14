@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import asyncio
 from types import TracebackType
-from typing import TYPE_CHECKING, Any, Generic, TypeVar, Callable, Iterable, Iterator, cast
+from typing import TYPE_CHECKING, Any, Generic, TypeVar, Callable, List, Iterator, cast
 from typing_extensions import Awaitable, AsyncIterable, AsyncIterator, assert_never
 
 import httpx
@@ -26,7 +26,7 @@ from ...types.beta.threads.runs import RunStep, ToolCall, RunStepDelta, ToolCall
 
 
 class AssistantEventHandler:
-    text_deltas: Iterable[str]
+    text_deltas: List[str]
     """Iterator over just the text deltas in the stream.
 
     This corresponds to the `thread.message.delta` event

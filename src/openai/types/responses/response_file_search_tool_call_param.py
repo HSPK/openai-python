@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Dict, List, Union, Iterable, Optional
+from typing import Dict, List, Union, List, Optional
 from typing_extensions import Literal, Required, TypedDict
 
 __all__ = ["ResponseFileSearchToolCallParam", "Result"]
@@ -47,5 +47,5 @@ class ResponseFileSearchToolCallParam(TypedDict, total=False):
     type: Required[Literal["file_search_call"]]
     """The type of the file search tool call. Always `file_search_call`."""
 
-    results: Optional[Iterable[Result]]
+    results: Optional[List[Result]]
     """The results of the file search tool call."""

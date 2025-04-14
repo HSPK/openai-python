@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Union, Iterable, Optional
+from typing import Union, List, Optional
 from typing_extensions import Literal
 
 import httpx
@@ -54,9 +54,9 @@ class Messages(SyncAPIResource):
         self,
         thread_id: str,
         *,
-        content: Union[str, Iterable[MessageContentPartParam]],
+        content: Union[str, List[MessageContentPartParam]],
         role: Literal["user", "assistant"],
-        attachments: Optional[Iterable[message_create_params.Attachment]] | NotGiven = NOT_GIVEN,
+        attachments: Optional[List[message_create_params.Attachment]] | NotGiven = NOT_GIVEN,
         metadata: Optional[Metadata] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -332,9 +332,9 @@ class AsyncMessages(AsyncAPIResource):
         self,
         thread_id: str,
         *,
-        content: Union[str, Iterable[MessageContentPartParam]],
+        content: Union[str, List[MessageContentPartParam]],
         role: Literal["user", "assistant"],
-        attachments: Optional[Iterable[message_create_params.Attachment]] | NotGiven = NOT_GIVEN,
+        attachments: Optional[List[message_create_params.Attachment]] | NotGiven = NOT_GIVEN,
         metadata: Optional[Metadata] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Dict, List, Union, Iterable, Optional
+from typing import Dict, List, Union, List, Optional
 from typing_extensions import Literal, Required, TypeAlias, TypedDict
 
 from .shared_params.metadata import Metadata
@@ -29,7 +29,7 @@ class EvalCreateParams(TypedDict, total=False):
     data_source_config: Required[DataSourceConfig]
     """The configuration for the data source used for the evaluation runs."""
 
-    testing_criteria: Required[Iterable[TestingCriterion]]
+    testing_criteria: Required[List[TestingCriterion]]
     """A list of graders for all eval runs in this group."""
 
     metadata: Optional[Metadata]
@@ -130,7 +130,7 @@ TestingCriterionLabelModelInput: TypeAlias = Union[
 
 
 class TestingCriterionLabelModel(TypedDict, total=False):
-    input: Required[Iterable[TestingCriterionLabelModelInput]]
+    input: Required[List[TestingCriterionLabelModelInput]]
 
     labels: Required[List[str]]
     """The labels to classify to each item in the evaluation."""

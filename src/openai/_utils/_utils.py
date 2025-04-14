@@ -11,7 +11,7 @@ from typing import (
     Mapping,
     TypeVar,
     Callable,
-    Iterable,
+    List,
     Sequence,
     cast,
     overload,
@@ -35,7 +35,7 @@ if TYPE_CHECKING:
     from ..lib.azure import AzureOpenAI, AsyncAzureOpenAI
 
 
-def flatten(t: Iterable[Iterable[_T]]) -> list[_T]:
+def flatten(t: List[List[_T]]) -> list[_T]:
     return [item for sublist in t for item in sublist]
 
 
@@ -169,8 +169,8 @@ def is_list(obj: object) -> TypeGuard[list[object]]:
     return isinstance(obj, list)
 
 
-def is_iterable(obj: object) -> TypeGuard[Iterable[object]]:
-    return isinstance(obj, Iterable)
+def is_iterable(obj: object) -> TypeGuard[List[object]]:
+    return isinstance(obj, List)
 
 
 def deepcopy_minimal(item: _T) -> _T:

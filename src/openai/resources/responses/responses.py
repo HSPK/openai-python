@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Any, List, Type, Union, Iterable, Optional, cast
+from typing import Any, List, Type, Union, List, Optional, cast
 from functools import partial
 from typing_extensions import Literal, overload
 
@@ -94,7 +94,7 @@ class Responses(SyncAPIResource):
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
         text: ResponseTextConfigParam | NotGiven = NOT_GIVEN,
         tool_choice: response_create_params.ToolChoice | NotGiven = NOT_GIVEN,
-        tools: Iterable[ToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[ToolParam] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation: Optional[Literal["auto", "disabled"]] | NotGiven = NOT_GIVEN,
         user: str | NotGiven = NOT_GIVEN,
@@ -259,7 +259,7 @@ class Responses(SyncAPIResource):
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
         text: ResponseTextConfigParam | NotGiven = NOT_GIVEN,
         tool_choice: response_create_params.ToolChoice | NotGiven = NOT_GIVEN,
-        tools: Iterable[ToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[ToolParam] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation: Optional[Literal["auto", "disabled"]] | NotGiven = NOT_GIVEN,
         user: str | NotGiven = NOT_GIVEN,
@@ -424,7 +424,7 @@ class Responses(SyncAPIResource):
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
         text: ResponseTextConfigParam | NotGiven = NOT_GIVEN,
         tool_choice: response_create_params.ToolChoice | NotGiven = NOT_GIVEN,
-        tools: Iterable[ToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[ToolParam] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation: Optional[Literal["auto", "disabled"]] | NotGiven = NOT_GIVEN,
         user: str | NotGiven = NOT_GIVEN,
@@ -589,7 +589,7 @@ class Responses(SyncAPIResource):
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
         text: ResponseTextConfigParam | NotGiven = NOT_GIVEN,
         tool_choice: response_create_params.ToolChoice | NotGiven = NOT_GIVEN,
-        tools: Iterable[ToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[ToolParam] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation: Optional[Literal["auto", "disabled"]] | NotGiven = NOT_GIVEN,
         user: str | NotGiven = NOT_GIVEN,
@@ -641,7 +641,7 @@ class Responses(SyncAPIResource):
         input: Union[str, ResponseInputParam],
         model: Union[str, ChatModel],
         text_format: type[TextFormatT] | NotGiven = NOT_GIVEN,
-        tools: Iterable[ParseableToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[ParseableToolParam] | NotGiven = NOT_GIVEN,
         include: Optional[List[ResponseIncludable]] | NotGiven = NOT_GIVEN,
         instructions: Optional[str] | NotGiven = NOT_GIVEN,
         max_output_tokens: Optional[int] | NotGiven = NOT_GIVEN,
@@ -712,7 +712,7 @@ class Responses(SyncAPIResource):
         input: Union[str, ResponseInputParam],
         model: Union[str, ChatModel],
         text_format: type[TextFormatT] | NotGiven = NOT_GIVEN,
-        tools: Iterable[ParseableToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[ParseableToolParam] | NotGiven = NOT_GIVEN,
         include: Optional[List[ResponseIncludable]] | NotGiven = NOT_GIVEN,
         instructions: Optional[str] | NotGiven = NOT_GIVEN,
         max_output_tokens: Optional[int] | NotGiven = NOT_GIVEN,
@@ -908,7 +908,7 @@ class AsyncResponses(AsyncAPIResource):
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
         text: ResponseTextConfigParam | NotGiven = NOT_GIVEN,
         tool_choice: response_create_params.ToolChoice | NotGiven = NOT_GIVEN,
-        tools: Iterable[ToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[ToolParam] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation: Optional[Literal["auto", "disabled"]] | NotGiven = NOT_GIVEN,
         user: str | NotGiven = NOT_GIVEN,
@@ -1073,7 +1073,7 @@ class AsyncResponses(AsyncAPIResource):
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
         text: ResponseTextConfigParam | NotGiven = NOT_GIVEN,
         tool_choice: response_create_params.ToolChoice | NotGiven = NOT_GIVEN,
-        tools: Iterable[ToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[ToolParam] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation: Optional[Literal["auto", "disabled"]] | NotGiven = NOT_GIVEN,
         user: str | NotGiven = NOT_GIVEN,
@@ -1238,7 +1238,7 @@ class AsyncResponses(AsyncAPIResource):
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
         text: ResponseTextConfigParam | NotGiven = NOT_GIVEN,
         tool_choice: response_create_params.ToolChoice | NotGiven = NOT_GIVEN,
-        tools: Iterable[ToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[ToolParam] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation: Optional[Literal["auto", "disabled"]] | NotGiven = NOT_GIVEN,
         user: str | NotGiven = NOT_GIVEN,
@@ -1403,7 +1403,7 @@ class AsyncResponses(AsyncAPIResource):
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
         text: ResponseTextConfigParam | NotGiven = NOT_GIVEN,
         tool_choice: response_create_params.ToolChoice | NotGiven = NOT_GIVEN,
-        tools: Iterable[ToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[ToolParam] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation: Optional[Literal["auto", "disabled"]] | NotGiven = NOT_GIVEN,
         user: str | NotGiven = NOT_GIVEN,
@@ -1455,7 +1455,7 @@ class AsyncResponses(AsyncAPIResource):
         input: Union[str, ResponseInputParam],
         model: Union[str, ChatModel],
         text_format: type[TextFormatT] | NotGiven = NOT_GIVEN,
-        tools: Iterable[ParseableToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[ParseableToolParam] | NotGiven = NOT_GIVEN,
         include: Optional[List[ResponseIncludable]] | NotGiven = NOT_GIVEN,
         instructions: Optional[str] | NotGiven = NOT_GIVEN,
         max_output_tokens: Optional[int] | NotGiven = NOT_GIVEN,
@@ -1525,7 +1525,7 @@ class AsyncResponses(AsyncAPIResource):
         input: Union[str, ResponseInputParam],
         model: Union[str, ChatModel],
         text_format: type[TextFormatT] | NotGiven = NOT_GIVEN,
-        tools: Iterable[ParseableToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[ParseableToolParam] | NotGiven = NOT_GIVEN,
         include: Optional[List[ResponseIncludable]] | NotGiven = NOT_GIVEN,
         instructions: Optional[str] | NotGiven = NOT_GIVEN,
         max_output_tokens: Optional[int] | NotGiven = NOT_GIVEN,
@@ -1757,7 +1757,7 @@ class AsyncResponsesWithStreamingResponse:
         return AsyncInputItemsWithStreamingResponse(self._responses.input_items)
 
 
-def _make_tools(tools: Iterable[ParseableToolParam] | NotGiven) -> List[ToolParam] | NotGiven:
+def _make_tools(tools: List[ParseableToolParam] | NotGiven) -> List[ToolParam] | NotGiven:
     if not is_given(tools):
         return NOT_GIVEN
 

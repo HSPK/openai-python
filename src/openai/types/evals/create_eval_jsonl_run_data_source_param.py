@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Dict, Union, Iterable
+from typing import Dict, Union, List
 from typing_extensions import Literal, Required, TypeAlias, TypedDict
 
 __all__ = [
@@ -21,7 +21,7 @@ class SourceFileContentContent(TypedDict, total=False):
 
 
 class SourceFileContent(TypedDict, total=False):
-    content: Required[Iterable[SourceFileContentContent]]
+    content: Required[List[SourceFileContentContent]]
     """The content of the jsonl file."""
 
     type: Required[Literal["file_content"]]

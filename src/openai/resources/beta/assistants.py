@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Union, Iterable, Optional
+from typing import Union, List, Optional
 from typing_extensions import Literal
 
 import httpx
@@ -66,7 +66,7 @@ class Assistants(SyncAPIResource):
         response_format: Optional[AssistantResponseFormatOptionParam] | NotGiven = NOT_GIVEN,
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[assistant_create_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Iterable[AssistantToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[AssistantToolParam] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -261,7 +261,7 @@ class Assistants(SyncAPIResource):
         response_format: Optional[AssistantResponseFormatOptionParam] | NotGiven = NOT_GIVEN,
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[assistant_update_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Iterable[AssistantToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[AssistantToolParam] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -509,7 +509,7 @@ class AsyncAssistants(AsyncAPIResource):
         response_format: Optional[AssistantResponseFormatOptionParam] | NotGiven = NOT_GIVEN,
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[assistant_create_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Iterable[AssistantToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[AssistantToolParam] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -704,7 +704,7 @@ class AsyncAssistants(AsyncAPIResource):
         response_format: Optional[AssistantResponseFormatOptionParam] | NotGiven = NOT_GIVEN,
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[assistant_update_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Iterable[AssistantToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[AssistantToolParam] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.

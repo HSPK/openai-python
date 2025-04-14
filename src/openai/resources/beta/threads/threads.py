@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Union, Iterable, Optional
+from typing import Union, List, Optional
 from functools import partial
 from typing_extensions import Literal, overload
 
@@ -92,7 +92,7 @@ class Threads(SyncAPIResource):
     def create(
         self,
         *,
-        messages: Iterable[thread_create_params.Message] | NotGiven = NOT_GIVEN,
+        messages: List[thread_create_params.Message] | NotGiven = NOT_GIVEN,
         metadata: Optional[Metadata] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[thread_create_params.ToolResources] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -286,7 +286,7 @@ class Threads(SyncAPIResource):
         thread: thread_create_and_run_params.Thread | NotGiven = NOT_GIVEN,
         tool_choice: Optional[AssistantToolChoiceOptionParam] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[thread_create_and_run_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
+        tools: Optional[List[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation_strategy: Optional[thread_create_and_run_params.TruncationStrategy] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -419,7 +419,7 @@ class Threads(SyncAPIResource):
         thread: thread_create_and_run_params.Thread | NotGiven = NOT_GIVEN,
         tool_choice: Optional[AssistantToolChoiceOptionParam] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[thread_create_and_run_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
+        tools: Optional[List[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation_strategy: Optional[thread_create_and_run_params.TruncationStrategy] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -552,7 +552,7 @@ class Threads(SyncAPIResource):
         thread: thread_create_and_run_params.Thread | NotGiven = NOT_GIVEN,
         tool_choice: Optional[AssistantToolChoiceOptionParam] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[thread_create_and_run_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
+        tools: Optional[List[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation_strategy: Optional[thread_create_and_run_params.TruncationStrategy] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -685,7 +685,7 @@ class Threads(SyncAPIResource):
         thread: thread_create_and_run_params.Thread | NotGiven = NOT_GIVEN,
         tool_choice: Optional[AssistantToolChoiceOptionParam] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[thread_create_and_run_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
+        tools: Optional[List[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation_strategy: Optional[thread_create_and_run_params.TruncationStrategy] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -744,7 +744,7 @@ class Threads(SyncAPIResource):
         thread: thread_create_and_run_params.Thread | NotGiven = NOT_GIVEN,
         tool_choice: Optional[AssistantToolChoiceOptionParam] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[thread_create_and_run_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
+        tools: Optional[List[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation_strategy: Optional[thread_create_and_run_params.TruncationStrategy] | NotGiven = NOT_GIVEN,
         poll_interval_ms: int | NotGiven = NOT_GIVEN,
@@ -800,7 +800,7 @@ class Threads(SyncAPIResource):
         thread: thread_create_and_run_params.Thread | NotGiven = NOT_GIVEN,
         tool_choice: Optional[AssistantToolChoiceOptionParam] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[thread_create_and_run_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
+        tools: Optional[List[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation_strategy: Optional[thread_create_and_run_params.TruncationStrategy] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -829,7 +829,7 @@ class Threads(SyncAPIResource):
         thread: thread_create_and_run_params.Thread | NotGiven = NOT_GIVEN,
         tool_choice: Optional[AssistantToolChoiceOptionParam] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[thread_create_and_run_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
+        tools: Optional[List[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation_strategy: Optional[thread_create_and_run_params.TruncationStrategy] | NotGiven = NOT_GIVEN,
         event_handler: AssistantEventHandlerT,
@@ -858,7 +858,7 @@ class Threads(SyncAPIResource):
         thread: thread_create_and_run_params.Thread | NotGiven = NOT_GIVEN,
         tool_choice: Optional[AssistantToolChoiceOptionParam] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[thread_create_and_run_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
+        tools: Optional[List[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation_strategy: Optional[thread_create_and_run_params.TruncationStrategy] | NotGiven = NOT_GIVEN,
         event_handler: AssistantEventHandlerT | None = None,
@@ -941,7 +941,7 @@ class AsyncThreads(AsyncAPIResource):
     async def create(
         self,
         *,
-        messages: Iterable[thread_create_params.Message] | NotGiven = NOT_GIVEN,
+        messages: List[thread_create_params.Message] | NotGiven = NOT_GIVEN,
         metadata: Optional[Metadata] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[thread_create_params.ToolResources] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -1135,7 +1135,7 @@ class AsyncThreads(AsyncAPIResource):
         thread: thread_create_and_run_params.Thread | NotGiven = NOT_GIVEN,
         tool_choice: Optional[AssistantToolChoiceOptionParam] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[thread_create_and_run_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
+        tools: Optional[List[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation_strategy: Optional[thread_create_and_run_params.TruncationStrategy] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -1268,7 +1268,7 @@ class AsyncThreads(AsyncAPIResource):
         thread: thread_create_and_run_params.Thread | NotGiven = NOT_GIVEN,
         tool_choice: Optional[AssistantToolChoiceOptionParam] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[thread_create_and_run_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
+        tools: Optional[List[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation_strategy: Optional[thread_create_and_run_params.TruncationStrategy] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -1401,7 +1401,7 @@ class AsyncThreads(AsyncAPIResource):
         thread: thread_create_and_run_params.Thread | NotGiven = NOT_GIVEN,
         tool_choice: Optional[AssistantToolChoiceOptionParam] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[thread_create_and_run_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
+        tools: Optional[List[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation_strategy: Optional[thread_create_and_run_params.TruncationStrategy] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -1534,7 +1534,7 @@ class AsyncThreads(AsyncAPIResource):
         thread: thread_create_and_run_params.Thread | NotGiven = NOT_GIVEN,
         tool_choice: Optional[AssistantToolChoiceOptionParam] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[thread_create_and_run_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
+        tools: Optional[List[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation_strategy: Optional[thread_create_and_run_params.TruncationStrategy] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -1593,7 +1593,7 @@ class AsyncThreads(AsyncAPIResource):
         thread: thread_create_and_run_params.Thread | NotGiven = NOT_GIVEN,
         tool_choice: Optional[AssistantToolChoiceOptionParam] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[thread_create_and_run_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
+        tools: Optional[List[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation_strategy: Optional[thread_create_and_run_params.TruncationStrategy] | NotGiven = NOT_GIVEN,
         poll_interval_ms: int | NotGiven = NOT_GIVEN,
@@ -1651,7 +1651,7 @@ class AsyncThreads(AsyncAPIResource):
         thread: thread_create_and_run_params.Thread | NotGiven = NOT_GIVEN,
         tool_choice: Optional[AssistantToolChoiceOptionParam] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[thread_create_and_run_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
+        tools: Optional[List[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation_strategy: Optional[thread_create_and_run_params.TruncationStrategy] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -1680,7 +1680,7 @@ class AsyncThreads(AsyncAPIResource):
         thread: thread_create_and_run_params.Thread | NotGiven = NOT_GIVEN,
         tool_choice: Optional[AssistantToolChoiceOptionParam] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[thread_create_and_run_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
+        tools: Optional[List[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation_strategy: Optional[thread_create_and_run_params.TruncationStrategy] | NotGiven = NOT_GIVEN,
         event_handler: AsyncAssistantEventHandlerT,
@@ -1709,7 +1709,7 @@ class AsyncThreads(AsyncAPIResource):
         thread: thread_create_and_run_params.Thread | NotGiven = NOT_GIVEN,
         tool_choice: Optional[AssistantToolChoiceOptionParam] | NotGiven = NOT_GIVEN,
         tool_resources: Optional[thread_create_and_run_params.ToolResources] | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
+        tools: Optional[List[thread_create_and_run_params.Tool]] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         truncation_strategy: Optional[thread_create_and_run_params.TruncationStrategy] | NotGiven = NOT_GIVEN,
         event_handler: AsyncAssistantEventHandlerT | None = None,

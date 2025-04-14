@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import List, Union, Iterable
+from typing import List, Union, List
 from typing_extensions import Literal, TypedDict
 
 __all__ = ["SessionCreateParams", "InputAudioNoiseReduction", "InputAudioTranscription", "Tool", "TurnDetection"]
@@ -96,7 +96,7 @@ class SessionCreateParams(TypedDict, total=False):
     Options are `auto`, `none`, `required`, or specify a function.
     """
 
-    tools: Iterable[Tool]
+    tools: List[Tool]
     """Tools (functions) available to the model."""
 
     turn_detection: TurnDetection

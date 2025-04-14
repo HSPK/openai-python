@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import List, Union, Iterable, Optional
+from typing import List, Union, List, Optional
 from typing_extensions import Literal, Required, TypeAlias, TypedDict
 
 from .tool_param import ToolParam
@@ -129,7 +129,7 @@ class ResponseCreateParamsBase(TypedDict, total=False):
     can call.
     """
 
-    tools: Iterable[ToolParam]
+    tools: List[ToolParam]
     """An array of tools the model may call while generating a response.
 
     You can specify which tool to use by setting the `tool_choice` parameter.

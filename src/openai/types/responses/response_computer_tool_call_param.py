@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import List, Union, Iterable
+from typing import List, Union, List
 from typing_extensions import Literal, Required, TypeAlias, TypedDict
 
 __all__ = [
@@ -65,7 +65,7 @@ class ActionDragPath(TypedDict, total=False):
 
 
 class ActionDrag(TypedDict, total=False):
-    path: Required[Iterable[ActionDragPath]]
+    path: Required[List[ActionDragPath]]
     """An array of coordinates representing the path of the drag action.
 
     Coordinates will appear as an array of objects, eg
@@ -194,7 +194,7 @@ class ResponseComputerToolCallParam(TypedDict, total=False):
     call_id: Required[str]
     """An identifier used when responding to the tool call with output."""
 
-    pending_safety_checks: Required[Iterable[PendingSafetyCheck]]
+    pending_safety_checks: Required[List[PendingSafetyCheck]]
     """The pending safety checks for the computer call."""
 
     status: Required[Literal["in_progress", "completed", "incomplete"]]

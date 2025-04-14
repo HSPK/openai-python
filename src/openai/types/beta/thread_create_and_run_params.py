@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import List, Union, Iterable, Optional
+from typing import List, Union, List, Optional
 from typing_extensions import Literal, Required, TypeAlias, TypedDict
 
 from ..shared.chat_model import ChatModel
@@ -153,7 +153,7 @@ class ThreadCreateAndRunParamsBase(TypedDict, total=False):
     tool requires a list of vector store IDs.
     """
 
-    tools: Optional[Iterable[Tool]]
+    tools: Optional[List[Tool]]
     """Override the tools the assistant can use for this run.
 
     This is useful for modifying the behavior on a per-run basis.
@@ -187,12 +187,12 @@ class ThreadMessageAttachment(TypedDict, total=False):
     file_id: str
     """The ID of the file to attach to the message."""
 
-    tools: Iterable[ThreadMessageAttachmentTool]
+    tools: List[ThreadMessageAttachmentTool]
     """The tools to add this file to."""
 
 
 class ThreadMessage(TypedDict, total=False):
-    content: Required[Union[str, Iterable[MessageContentPartParam]]]
+    content: Required[Union[str, List[MessageContentPartParam]]]
     """The text contents of the message."""
 
     role: Required[Literal["user", "assistant"]]
@@ -204,7 +204,7 @@ class ThreadMessage(TypedDict, total=False):
       value to insert messages from the assistant into the conversation.
     """
 
-    attachments: Optional[Iterable[ThreadMessageAttachment]]
+    attachments: Optional[List[ThreadMessageAttachment]]
     """A list of files attached to the message, and the tools they should be added to."""
 
     metadata: Optional[Metadata]
@@ -294,7 +294,7 @@ class ThreadToolResourcesFileSearch(TypedDict, total=False):
     the thread.
     """
 
-    vector_stores: Iterable[ThreadToolResourcesFileSearchVectorStore]
+    vector_stores: List[ThreadToolResourcesFileSearchVectorStore]
     """
     A helper to create a
     [vector store](https://platform.openai.com/docs/api-reference/vector-stores/object)
@@ -310,7 +310,7 @@ class ThreadToolResources(TypedDict, total=False):
 
 
 class Thread(TypedDict, total=False):
-    messages: Iterable[ThreadMessage]
+    messages: List[ThreadMessage]
     """
     A list of [messages](https://platform.openai.com/docs/api-reference/messages) to
     start the thread with.

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import inspect
 from types import TracebackType
-from typing import Any, List, Generic, Iterable, Awaitable, cast
+from typing import Any, List, Generic, List, Awaitable, cast
 from typing_extensions import Self, Callable, Iterator, AsyncIterator
 
 from ._types import ParsedResponseSnapshot
@@ -33,7 +33,7 @@ class ResponseStream(Generic[TextFormatT]):
         *,
         raw_stream: Stream[RawResponseStreamEvent],
         text_format: type[TextFormatT] | NotGiven,
-        input_tools: Iterable[ToolParam] | NotGiven,
+        input_tools: List[ToolParam] | NotGiven,
     ) -> None:
         self._raw_stream = raw_stream
         self._response = raw_stream.response
@@ -95,7 +95,7 @@ class ResponseStreamManager(Generic[TextFormatT]):
         api_request: Callable[[], Stream[RawResponseStreamEvent]],
         *,
         text_format: type[TextFormatT] | NotGiven,
-        input_tools: Iterable[ToolParam] | NotGiven,
+        input_tools: List[ToolParam] | NotGiven,
     ) -> None:
         self.__stream: ResponseStream[TextFormatT] | None = None
         self.__api_request = api_request
@@ -129,7 +129,7 @@ class AsyncResponseStream(Generic[TextFormatT]):
         *,
         raw_stream: AsyncStream[RawResponseStreamEvent],
         text_format: type[TextFormatT] | NotGiven,
-        input_tools: Iterable[ToolParam] | NotGiven,
+        input_tools: List[ToolParam] | NotGiven,
     ) -> None:
         self._raw_stream = raw_stream
         self._response = raw_stream.response
@@ -191,7 +191,7 @@ class AsyncResponseStreamManager(Generic[TextFormatT]):
         api_request: Awaitable[AsyncStream[RawResponseStreamEvent]],
         *,
         text_format: type[TextFormatT] | NotGiven,
-        input_tools: Iterable[ToolParam] | NotGiven,
+        input_tools: List[ToolParam] | NotGiven,
     ) -> None:
         self.__stream: AsyncResponseStream[TextFormatT] | None = None
         self.__api_request = api_request
@@ -223,7 +223,7 @@ class ResponseStreamState(Generic[TextFormatT]):
     def __init__(
         self,
         *,
-        input_tools: Iterable[ToolParam] | NotGiven,
+        input_tools: List[ToolParam] | NotGiven,
         text_format: type[TextFormatT] | NotGiven,
     ) -> None:
         self.__current_snapshot: ParsedResponseSnapshot | None = None

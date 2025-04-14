@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import json
-from typing import TYPE_CHECKING, Any, List, Iterable, cast
+from typing import TYPE_CHECKING, Any, List, List, cast
 from typing_extensions import TypeVar, assert_never
 
 import pydantic
@@ -53,7 +53,7 @@ def type_to_text_format_param(type_: type) -> ResponseFormatTextConfigParam:
 def parse_response(
     *,
     text_format: type[TextFormatT] | NotGiven,
-    input_tools: Iterable[ToolParam] | NotGiven | None,
+    input_tools: List[ToolParam] | NotGiven | None,
     response: Response | ParsedResponse[object],
 ) -> ParsedResponse[TextFormatT]:
     solved_t = solve_response_format_t(text_format)
@@ -138,7 +138,7 @@ def parse_text(text: str, text_format: type[TextFormatT] | NotGiven) -> TextForm
     raise TypeError(f"Unable to automatically parse response format type {text_format}")
 
 
-def get_input_tool_by_name(*, input_tools: Iterable[ToolParam], name: str) -> FunctionToolParam | None:
+def get_input_tool_by_name(*, input_tools: List[ToolParam], name: str) -> FunctionToolParam | None:
     for tool in input_tools:
         if tool["type"] == "function" and tool.get("name") == name:
             return tool
@@ -148,7 +148,7 @@ def get_input_tool_by_name(*, input_tools: Iterable[ToolParam], name: str) -> Fu
 
 def parse_function_tool_arguments(
     *,
-    input_tools: Iterable[ToolParam] | NotGiven | None,
+    input_tools: List[ToolParam] | NotGiven | None,
     function_call: ParsedResponseFunctionToolCall | ResponseFunctionToolCall,
 ) -> object:
     if input_tools is None or not is_given(input_tools):

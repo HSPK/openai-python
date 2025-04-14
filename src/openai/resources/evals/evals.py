@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Iterable, Optional
+from typing import List, Optional
 from typing_extensions import Literal
 
 import httpx
@@ -65,7 +65,7 @@ class Evals(SyncAPIResource):
         self,
         *,
         data_source_config: eval_create_params.DataSourceConfig,
-        testing_criteria: Iterable[eval_create_params.TestingCriterion],
+        testing_criteria: List[eval_create_params.TestingCriterion],
         metadata: Optional[Metadata] | NotGiven = NOT_GIVEN,
         name: str | NotGiven = NOT_GIVEN,
         share_with_openai: bool | NotGiven = NOT_GIVEN,
@@ -328,7 +328,7 @@ class AsyncEvals(AsyncAPIResource):
         self,
         *,
         data_source_config: eval_create_params.DataSourceConfig,
-        testing_criteria: Iterable[eval_create_params.TestingCriterion],
+        testing_criteria: List[eval_create_params.TestingCriterion],
         metadata: Optional[Metadata] | NotGiven = NOT_GIVEN,
         name: str | NotGiven = NOT_GIVEN,
         share_with_openai: bool | NotGiven = NOT_GIVEN,

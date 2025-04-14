@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import List, Union, Iterable, Optional
+from typing import List, Union, List, Optional
 from typing_extensions import Literal, Required, TypeAlias, TypedDict
 
 from ...shared.chat_model import ChatModel
@@ -54,7 +54,7 @@ class RunCreateParamsBase(TypedDict, total=False):
     other instructions.
     """
 
-    additional_messages: Optional[Iterable[AdditionalMessage]]
+    additional_messages: Optional[List[AdditionalMessage]]
     """Adds additional messages to the thread before creating the run."""
 
     instructions: Optional[str]
@@ -158,7 +158,7 @@ class RunCreateParamsBase(TypedDict, total=False):
     call that tool.
     """
 
-    tools: Optional[Iterable[AssistantToolParam]]
+    tools: Optional[List[AssistantToolParam]]
     """Override the tools the assistant can use for this run.
 
     This is useful for modifying the behavior on a per-run basis.
@@ -192,12 +192,12 @@ class AdditionalMessageAttachment(TypedDict, total=False):
     file_id: str
     """The ID of the file to attach to the message."""
 
-    tools: Iterable[AdditionalMessageAttachmentTool]
+    tools: List[AdditionalMessageAttachmentTool]
     """The tools to add this file to."""
 
 
 class AdditionalMessage(TypedDict, total=False):
-    content: Required[Union[str, Iterable[MessageContentPartParam]]]
+    content: Required[Union[str, List[MessageContentPartParam]]]
     """The text contents of the message."""
 
     role: Required[Literal["user", "assistant"]]
@@ -209,7 +209,7 @@ class AdditionalMessage(TypedDict, total=False):
       value to insert messages from the assistant into the conversation.
     """
 
-    attachments: Optional[Iterable[AdditionalMessageAttachment]]
+    attachments: Optional[List[AdditionalMessageAttachment]]
     """A list of files attached to the message, and the tools they should be added to."""
 
     metadata: Optional[Metadata]

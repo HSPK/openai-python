@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import List, Union, Iterable, Optional
+from typing import List, Union, List, Optional
 from typing_extensions import Literal, Required, TypeAlias, TypedDict
 
 from ..shared_params.metadata import Metadata
@@ -27,7 +27,7 @@ __all__ = [
 
 
 class ThreadCreateParams(TypedDict, total=False):
-    messages: Iterable[Message]
+    messages: List[Message]
     """
     A list of [messages](https://platform.openai.com/docs/api-reference/messages) to
     start the thread with.
@@ -64,12 +64,12 @@ class MessageAttachment(TypedDict, total=False):
     file_id: str
     """The ID of the file to attach to the message."""
 
-    tools: Iterable[MessageAttachmentTool]
+    tools: List[MessageAttachmentTool]
     """The tools to add this file to."""
 
 
 class Message(TypedDict, total=False):
-    content: Required[Union[str, Iterable[MessageContentPartParam]]]
+    content: Required[Union[str, List[MessageContentPartParam]]]
     """The text contents of the message."""
 
     role: Required[Literal["user", "assistant"]]
@@ -81,7 +81,7 @@ class Message(TypedDict, total=False):
       value to insert messages from the assistant into the conversation.
     """
 
-    attachments: Optional[Iterable[MessageAttachment]]
+    attachments: Optional[List[MessageAttachment]]
     """A list of files attached to the message, and the tools they should be added to."""
 
     metadata: Optional[Metadata]
@@ -170,7 +170,7 @@ class ToolResourcesFileSearch(TypedDict, total=False):
     the thread.
     """
 
-    vector_stores: Iterable[ToolResourcesFileSearchVectorStore]
+    vector_stores: List[ToolResourcesFileSearchVectorStore]
     """
     A helper to create a
     [vector store](https://platform.openai.com/docs/api-reference/vector-stores/object)

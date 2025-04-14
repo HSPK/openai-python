@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Dict, List, Union, Iterable, Optional
+from typing import Dict, List, Union, List, Optional
 from typing_extensions import Literal, Required, TypedDict
 
 from .chat.chat_completion_stream_options_param import ChatCompletionStreamOptionsParam
@@ -21,7 +21,7 @@ class CompletionCreateParamsBase(TypedDict, total=False):
     them.
     """
 
-    prompt: Required[Union[str, List[str], Iterable[int], Iterable[Iterable[int]], None]]
+    prompt: Required[Union[str, List[str], List[int], List[List[int]], None]]
     """
     The prompt(s) to generate completions for, encoded as a string, array of
     strings, array of tokens, or array of token arrays.

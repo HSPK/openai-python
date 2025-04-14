@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import asyncio
-from typing import Dict, List, Iterable, Optional
+from typing import Dict, List, List, Optional
 from typing_extensions import Union, Literal
 from concurrent.futures import Future, ThreadPoolExecutor, as_completed
 
@@ -322,7 +322,7 @@ class FileBatches(SyncAPIResource):
         self,
         vector_store_id: str,
         *,
-        files: Iterable[FileTypes],
+        files: List[FileTypes],
         max_concurrency: int = 5,
         file_ids: List[str] = [],
         poll_interval_ms: int | NotGiven = NOT_GIVEN,
@@ -659,7 +659,7 @@ class AsyncFileBatches(AsyncAPIResource):
         self,
         vector_store_id: str,
         *,
-        files: Iterable[FileTypes],
+        files: List[FileTypes],
         max_concurrency: int = 5,
         file_ids: List[str] = [],
         poll_interval_ms: int | NotGiven = NOT_GIVEN,

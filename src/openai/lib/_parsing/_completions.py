@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import json
-from typing import TYPE_CHECKING, Any, Iterable, cast
+from typing import TYPE_CHECKING, Any, List, cast
 from typing_extensions import TypeVar, TypeGuard, assert_never
 
 import pydantic
@@ -37,7 +37,7 @@ _default_response_format: None = None
 
 
 def validate_input_tools(
-    tools: Iterable[ChatCompletionToolParam] | NotGiven = NOT_GIVEN,
+    tools: List[ChatCompletionToolParam] | NotGiven = NOT_GIVEN,
 ) -> None:
     if not is_given(tools):
         return
@@ -58,7 +58,7 @@ def validate_input_tools(
 def parse_chat_completion(
     *,
     response_format: type[ResponseFormatT] | completion_create_params.ResponseFormat | NotGiven,
-    input_tools: Iterable[ChatCompletionToolParam] | NotGiven,
+    input_tools: List[ChatCompletionToolParam] | NotGiven,
     chat_completion: ChatCompletion | ParsedChatCompletion[object],
 ) -> ParsedChatCompletion[ResponseFormatT]:
     if is_given(input_tools):
@@ -180,7 +180,7 @@ def solve_response_format_t(
 def has_parseable_input(
     *,
     response_format: type | ResponseFormatParam | NotGiven,
-    input_tools: Iterable[ChatCompletionToolParam] | NotGiven = NOT_GIVEN,
+    input_tools: List[ChatCompletionToolParam] | NotGiven = NOT_GIVEN,
 ) -> bool:
     if has_rich_response_format(response_format):
         return True

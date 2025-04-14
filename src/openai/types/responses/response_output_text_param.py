@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Union, Iterable
+from typing import Union, List
 from typing_extensions import Literal, Required, TypeAlias, TypedDict
 
 __all__ = [
@@ -57,7 +57,7 @@ Annotation: TypeAlias = Union[AnnotationFileCitation, AnnotationURLCitation, Ann
 
 
 class ResponseOutputTextParam(TypedDict, total=False):
-    annotations: Required[Iterable[Annotation]]
+    annotations: Required[List[Annotation]]
     """The annotations of the text output."""
 
     text: Required[str]

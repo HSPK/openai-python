@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Dict, List, Type, Union, Iterable, Optional, cast
+from typing import Dict, List, Type, Union, List, Optional, cast
 from functools import partial
 from typing_extensions import Literal
 
@@ -62,13 +62,13 @@ class Completions(SyncAPIResource):
     def parse(
         self,
         *,
-        messages: Iterable[ChatCompletionMessageParam],
+        messages: List[ChatCompletionMessageParam],
         model: Union[str, ChatModel],
         audio: Optional[ChatCompletionAudioParam] | NotGiven = NOT_GIVEN,
         response_format: type[ResponseFormatT] | NotGiven = NOT_GIVEN,
         frequency_penalty: Optional[float] | NotGiven = NOT_GIVEN,
         function_call: completion_create_params.FunctionCall | NotGiven = NOT_GIVEN,
-        functions: Iterable[completion_create_params.Function] | NotGiven = NOT_GIVEN,
+        functions: List[completion_create_params.Function] | NotGiven = NOT_GIVEN,
         logit_bias: Optional[Dict[str, int]] | NotGiven = NOT_GIVEN,
         logprobs: Optional[bool] | NotGiven = NOT_GIVEN,
         max_completion_tokens: Optional[int] | NotGiven = NOT_GIVEN,
@@ -87,7 +87,7 @@ class Completions(SyncAPIResource):
         stream_options: Optional[ChatCompletionStreamOptionsParam] | NotGiven = NOT_GIVEN,
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
         tool_choice: ChatCompletionToolChoiceOptionParam | NotGiven = NOT_GIVEN,
-        tools: Iterable[ChatCompletionToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[ChatCompletionToolParam] | NotGiven = NOT_GIVEN,
         top_logprobs: Optional[int] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         user: str | NotGiven = NOT_GIVEN,
@@ -209,13 +209,13 @@ class Completions(SyncAPIResource):
     def stream(
         self,
         *,
-        messages: Iterable[ChatCompletionMessageParam],
+        messages: List[ChatCompletionMessageParam],
         model: Union[str, ChatModel],
         audio: Optional[ChatCompletionAudioParam] | NotGiven = NOT_GIVEN,
         response_format: completion_create_params.ResponseFormat | type[ResponseFormatT] | NotGiven = NOT_GIVEN,
         frequency_penalty: Optional[float] | NotGiven = NOT_GIVEN,
         function_call: completion_create_params.FunctionCall | NotGiven = NOT_GIVEN,
-        functions: Iterable[completion_create_params.Function] | NotGiven = NOT_GIVEN,
+        functions: List[completion_create_params.Function] | NotGiven = NOT_GIVEN,
         logit_bias: Optional[Dict[str, int]] | NotGiven = NOT_GIVEN,
         logprobs: Optional[bool] | NotGiven = NOT_GIVEN,
         max_completion_tokens: Optional[int] | NotGiven = NOT_GIVEN,
@@ -234,7 +234,7 @@ class Completions(SyncAPIResource):
         stream_options: Optional[ChatCompletionStreamOptionsParam] | NotGiven = NOT_GIVEN,
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
         tool_choice: ChatCompletionToolChoiceOptionParam | NotGiven = NOT_GIVEN,
-        tools: Iterable[ChatCompletionToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[ChatCompletionToolParam] | NotGiven = NOT_GIVEN,
         top_logprobs: Optional[int] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         user: str | NotGiven = NOT_GIVEN,
@@ -341,13 +341,13 @@ class AsyncCompletions(AsyncAPIResource):
     async def parse(
         self,
         *,
-        messages: Iterable[ChatCompletionMessageParam],
+        messages: List[ChatCompletionMessageParam],
         model: Union[str, ChatModel],
         audio: Optional[ChatCompletionAudioParam] | NotGiven = NOT_GIVEN,
         response_format: type[ResponseFormatT] | NotGiven = NOT_GIVEN,
         frequency_penalty: Optional[float] | NotGiven = NOT_GIVEN,
         function_call: completion_create_params.FunctionCall | NotGiven = NOT_GIVEN,
-        functions: Iterable[completion_create_params.Function] | NotGiven = NOT_GIVEN,
+        functions: List[completion_create_params.Function] | NotGiven = NOT_GIVEN,
         logit_bias: Optional[Dict[str, int]] | NotGiven = NOT_GIVEN,
         logprobs: Optional[bool] | NotGiven = NOT_GIVEN,
         max_completion_tokens: Optional[int] | NotGiven = NOT_GIVEN,
@@ -366,7 +366,7 @@ class AsyncCompletions(AsyncAPIResource):
         stream_options: Optional[ChatCompletionStreamOptionsParam] | NotGiven = NOT_GIVEN,
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
         tool_choice: ChatCompletionToolChoiceOptionParam | NotGiven = NOT_GIVEN,
-        tools: Iterable[ChatCompletionToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[ChatCompletionToolParam] | NotGiven = NOT_GIVEN,
         top_logprobs: Optional[int] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         user: str | NotGiven = NOT_GIVEN,
@@ -488,13 +488,13 @@ class AsyncCompletions(AsyncAPIResource):
     def stream(
         self,
         *,
-        messages: Iterable[ChatCompletionMessageParam],
+        messages: List[ChatCompletionMessageParam],
         model: Union[str, ChatModel],
         audio: Optional[ChatCompletionAudioParam] | NotGiven = NOT_GIVEN,
         response_format: completion_create_params.ResponseFormat | type[ResponseFormatT] | NotGiven = NOT_GIVEN,
         frequency_penalty: Optional[float] | NotGiven = NOT_GIVEN,
         function_call: completion_create_params.FunctionCall | NotGiven = NOT_GIVEN,
-        functions: Iterable[completion_create_params.Function] | NotGiven = NOT_GIVEN,
+        functions: List[completion_create_params.Function] | NotGiven = NOT_GIVEN,
         logit_bias: Optional[Dict[str, int]] | NotGiven = NOT_GIVEN,
         logprobs: Optional[bool] | NotGiven = NOT_GIVEN,
         max_completion_tokens: Optional[int] | NotGiven = NOT_GIVEN,
@@ -513,7 +513,7 @@ class AsyncCompletions(AsyncAPIResource):
         stream_options: Optional[ChatCompletionStreamOptionsParam] | NotGiven = NOT_GIVEN,
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
         tool_choice: ChatCompletionToolChoiceOptionParam | NotGiven = NOT_GIVEN,
-        tools: Iterable[ChatCompletionToolParam] | NotGiven = NOT_GIVEN,
+        tools: List[ChatCompletionToolParam] | NotGiven = NOT_GIVEN,
         top_logprobs: Optional[int] | NotGiven = NOT_GIVEN,
         top_p: Optional[float] | NotGiven = NOT_GIVEN,
         user: str | NotGiven = NOT_GIVEN,

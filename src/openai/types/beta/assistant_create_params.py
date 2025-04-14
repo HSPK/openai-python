@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import List, Union, Iterable, Optional
+from typing import List, Union, List, Optional
 from typing_extensions import Literal, Required, TypeAlias, TypedDict
 
 from ..shared.chat_model import ChatModel
@@ -105,7 +105,7 @@ class AssistantCreateParams(TypedDict, total=False):
     tool requires a list of vector store IDs.
     """
 
-    tools: Iterable[AssistantToolParam]
+    tools: List[AssistantToolParam]
     """A list of tool enabled on the assistant.
 
     There can be a maximum of 128 tools per assistant. Tools can be of types
@@ -197,7 +197,7 @@ class ToolResourcesFileSearch(TypedDict, total=False):
     the assistant.
     """
 
-    vector_stores: Iterable[ToolResourcesFileSearchVectorStore]
+    vector_stores: List[ToolResourcesFileSearchVectorStore]
     """
     A helper to create a
     [vector store](https://platform.openai.com/docs/api-reference/vector-stores/object)

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Iterable
+from typing import List
 from typing_extensions import Literal, TypedDict
 
 from .conversation_item_content_param import ConversationItemContentParam
@@ -31,7 +31,7 @@ class ConversationItemWithReferenceParam(TypedDict, total=False):
     `function_call` item with the same ID exists in the conversation history.
     """
 
-    content: Iterable[ConversationItemContentParam]
+    content: List[ConversationItemContentParam]
     """The content of the message, applicable for `message` items.
 
     - Message items of role `system` support only `input_text` content

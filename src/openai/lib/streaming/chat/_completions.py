@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import inspect
 from types import TracebackType
-from typing import TYPE_CHECKING, Any, Generic, Callable, Iterable, Awaitable, AsyncIterator, cast
+from typing import TYPE_CHECKING, Any, Generic, Callable, List, Awaitable, AsyncIterator, cast
 from typing_extensions import Self, Iterator, assert_never
 
 from jiter import from_json
@@ -58,7 +58,7 @@ class ChatCompletionStream(Generic[ResponseFormatT]):
         *,
         raw_stream: Stream[ChatCompletionChunk],
         response_format: type[ResponseFormatT] | ResponseFormatParam | NotGiven,
-        input_tools: Iterable[ChatCompletionToolParam] | NotGiven,
+        input_tools: List[ChatCompletionToolParam] | NotGiven,
     ) -> None:
         self._raw_stream = raw_stream
         self._response = raw_stream.response
@@ -137,7 +137,7 @@ class ChatCompletionStreamManager(Generic[ResponseFormatT]):
         api_request: Callable[[], Stream[ChatCompletionChunk]],
         *,
         response_format: type[ResponseFormatT] | ResponseFormatParam | NotGiven,
-        input_tools: Iterable[ChatCompletionToolParam] | NotGiven,
+        input_tools: List[ChatCompletionToolParam] | NotGiven,
     ) -> None:
         self.__stream: ChatCompletionStream[ResponseFormatT] | None = None
         self.__api_request = api_request
@@ -179,7 +179,7 @@ class AsyncChatCompletionStream(Generic[ResponseFormatT]):
         *,
         raw_stream: AsyncStream[ChatCompletionChunk],
         response_format: type[ResponseFormatT] | ResponseFormatParam | NotGiven,
-        input_tools: Iterable[ChatCompletionToolParam] | NotGiven,
+        input_tools: List[ChatCompletionToolParam] | NotGiven,
     ) -> None:
         self._raw_stream = raw_stream
         self._response = raw_stream.response
@@ -258,7 +258,7 @@ class AsyncChatCompletionStreamManager(Generic[ResponseFormatT]):
         api_request: Awaitable[AsyncStream[ChatCompletionChunk]],
         *,
         response_format: type[ResponseFormatT] | ResponseFormatParam | NotGiven,
-        input_tools: Iterable[ChatCompletionToolParam] | NotGiven,
+        input_tools: List[ChatCompletionToolParam] | NotGiven,
     ) -> None:
         self.__stream: AsyncChatCompletionStream[ResponseFormatT] | None = None
         self.__api_request = api_request
@@ -310,7 +310,7 @@ class ChatCompletionStreamState(Generic[ResponseFormatT]):
     def __init__(
         self,
         *,
-        input_tools: Iterable[ChatCompletionToolParam] | NotGiven = NOT_GIVEN,
+        input_tools: List[ChatCompletionToolParam] | NotGiven = NOT_GIVEN,
         response_format: type[ResponseFormatT] | ResponseFormatParam | NotGiven = NOT_GIVEN,
     ) -> None:
         self.__current_completion_snapshot: ParsedChatCompletionSnapshot | None = None
@@ -337,7 +337,7 @@ class ChatCompletionStreamState(Generic[ResponseFormatT]):
         assert self.__current_completion_snapshot is not None
         return self.__current_completion_snapshot
 
-    def handle_chunk(self, chunk: ChatCompletionChunk) -> Iterable[ChatCompletionStreamEvent[ResponseFormatT]]:
+    def handle_chunk(self, chunk: ChatCompletionChunk) -> List[ChatCompletionStreamEvent[ResponseFormatT]]:
         """Accumulate a new chunk into the snapshot and returns an iterable of events to yield."""
         self.__current_completion_snapshot = self._accumulate_chunk(chunk)
 

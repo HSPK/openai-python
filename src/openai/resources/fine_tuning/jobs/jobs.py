@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Dict, Union, Iterable, Optional
+from typing import Dict, Union, List, Optional
 from typing_extensions import Literal
 
 import httpx
@@ -67,7 +67,7 @@ class Jobs(SyncAPIResource):
         model: Union[str, Literal["babbage-002", "davinci-002", "gpt-3.5-turbo", "gpt-4o-mini"]],
         training_file: str,
         hyperparameters: job_create_params.Hyperparameters | NotGiven = NOT_GIVEN,
-        integrations: Optional[Iterable[job_create_params.Integration]] | NotGiven = NOT_GIVEN,
+        integrations: Optional[List[job_create_params.Integration]] | NotGiven = NOT_GIVEN,
         metadata: Optional[Metadata] | NotGiven = NOT_GIVEN,
         method: job_create_params.Method | NotGiven = NOT_GIVEN,
         seed: Optional[int] | NotGiven = NOT_GIVEN,
@@ -379,7 +379,7 @@ class AsyncJobs(AsyncAPIResource):
         model: Union[str, Literal["babbage-002", "davinci-002", "gpt-3.5-turbo", "gpt-4o-mini"]],
         training_file: str,
         hyperparameters: job_create_params.Hyperparameters | NotGiven = NOT_GIVEN,
-        integrations: Optional[Iterable[job_create_params.Integration]] | NotGiven = NOT_GIVEN,
+        integrations: Optional[List[job_create_params.Integration]] | NotGiven = NOT_GIVEN,
         metadata: Optional[Metadata] | NotGiven = NOT_GIVEN,
         method: job_create_params.Method | NotGiven = NOT_GIVEN,
         seed: Optional[int] | NotGiven = NOT_GIVEN,

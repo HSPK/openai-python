@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import List, Union, Iterable, Optional
+from typing import List, Union, List, Optional
 from typing_extensions import Literal, Required, TypedDict
 
 from ...shared_params.metadata import Metadata
@@ -38,7 +38,7 @@ class Response(TypedDict, total=False):
     will not add items to default conversation.
     """
 
-    input: Iterable[ConversationItemWithReferenceParam]
+    input: List[ConversationItemWithReferenceParam]
     """Input items to include in the prompt for the model.
 
     Using this field creates a new context for this Response instead of using the
@@ -99,7 +99,7 @@ class Response(TypedDict, total=False):
     `{"type": "function", "function": {"name": "my_function"}}`.
     """
 
-    tools: Iterable[ResponseTool]
+    tools: List[ResponseTool]
     """Tools (functions) available to the model."""
 
     voice: Union[

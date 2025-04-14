@@ -3,7 +3,7 @@ from __future__ import annotations
 import sys
 import typing
 import typing_extensions
-from typing import Any, TypeVar, Iterable, cast
+from typing import Any, TypeVar, List, cast
 from collections import abc as _c_abc
 from typing_extensions import (
     TypeIs,
@@ -27,9 +27,9 @@ def is_list_type(typ: type) -> bool:
 
 
 def is_iterable_type(typ: type) -> bool:
-    """If the given type is `typing.Iterable[T]`"""
+    """If the given type is `typing.List[T]`"""
     origin = get_origin(typ) or typ
-    return origin == Iterable or origin == _c_abc.Iterable
+    return origin == List or origin == _c_abc.List
 
 
 def is_union_type(typ: type) -> bool:

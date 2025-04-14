@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Dict, List, Union, Iterable, Optional
+from typing import Dict, List, Union, List, Optional
 from typing_extensions import Literal, overload
 
 import httpx
@@ -53,7 +53,7 @@ class Completions(SyncAPIResource):
         self,
         *,
         model: Union[str, Literal["gpt-3.5-turbo-instruct", "davinci-002", "babbage-002"]],
-        prompt: Union[str, List[str], Iterable[int], Iterable[Iterable[int]], None],
+        prompt: Union[str, List[str], List[int], List[List[int]], None],
         best_of: Optional[int] | NotGiven = NOT_GIVEN,
         echo: Optional[bool] | NotGiven = NOT_GIVEN,
         frequency_penalty: Optional[float] | NotGiven = NOT_GIVEN,
@@ -206,7 +206,7 @@ class Completions(SyncAPIResource):
         self,
         *,
         model: Union[str, Literal["gpt-3.5-turbo-instruct", "davinci-002", "babbage-002"]],
-        prompt: Union[str, List[str], Iterable[int], Iterable[Iterable[int]], None],
+        prompt: Union[str, List[str], List[int], List[List[int]], None],
         stream: Literal[True],
         best_of: Optional[int] | NotGiven = NOT_GIVEN,
         echo: Optional[bool] | NotGiven = NOT_GIVEN,
@@ -359,7 +359,7 @@ class Completions(SyncAPIResource):
         self,
         *,
         model: Union[str, Literal["gpt-3.5-turbo-instruct", "davinci-002", "babbage-002"]],
-        prompt: Union[str, List[str], Iterable[int], Iterable[Iterable[int]], None],
+        prompt: Union[str, List[str], List[int], List[List[int]], None],
         stream: bool,
         best_of: Optional[int] | NotGiven = NOT_GIVEN,
         echo: Optional[bool] | NotGiven = NOT_GIVEN,
@@ -512,7 +512,7 @@ class Completions(SyncAPIResource):
         self,
         *,
         model: Union[str, Literal["gpt-3.5-turbo-instruct", "davinci-002", "babbage-002"]],
-        prompt: Union[str, List[str], Iterable[int], Iterable[Iterable[int]], None],
+        prompt: Union[str, List[str], List[int], List[List[int]], None],
         best_of: Optional[int] | NotGiven = NOT_GIVEN,
         echo: Optional[bool] | NotGiven = NOT_GIVEN,
         frequency_penalty: Optional[float] | NotGiven = NOT_GIVEN,
@@ -597,7 +597,7 @@ class AsyncCompletions(AsyncAPIResource):
         self,
         *,
         model: Union[str, Literal["gpt-3.5-turbo-instruct", "davinci-002", "babbage-002"]],
-        prompt: Union[str, List[str], Iterable[int], Iterable[Iterable[int]], None],
+        prompt: Union[str, List[str], List[int], List[List[int]], None],
         best_of: Optional[int] | NotGiven = NOT_GIVEN,
         echo: Optional[bool] | NotGiven = NOT_GIVEN,
         frequency_penalty: Optional[float] | NotGiven = NOT_GIVEN,
@@ -750,7 +750,7 @@ class AsyncCompletions(AsyncAPIResource):
         self,
         *,
         model: Union[str, Literal["gpt-3.5-turbo-instruct", "davinci-002", "babbage-002"]],
-        prompt: Union[str, List[str], Iterable[int], Iterable[Iterable[int]], None],
+        prompt: Union[str, List[str], List[int], List[List[int]], None],
         stream: Literal[True],
         best_of: Optional[int] | NotGiven = NOT_GIVEN,
         echo: Optional[bool] | NotGiven = NOT_GIVEN,
@@ -903,7 +903,7 @@ class AsyncCompletions(AsyncAPIResource):
         self,
         *,
         model: Union[str, Literal["gpt-3.5-turbo-instruct", "davinci-002", "babbage-002"]],
-        prompt: Union[str, List[str], Iterable[int], Iterable[Iterable[int]], None],
+        prompt: Union[str, List[str], List[int], List[List[int]], None],
         stream: bool,
         best_of: Optional[int] | NotGiven = NOT_GIVEN,
         echo: Optional[bool] | NotGiven = NOT_GIVEN,
@@ -1056,7 +1056,7 @@ class AsyncCompletions(AsyncAPIResource):
         self,
         *,
         model: Union[str, Literal["gpt-3.5-turbo-instruct", "davinci-002", "babbage-002"]],
-        prompt: Union[str, List[str], Iterable[int], Iterable[Iterable[int]], None],
+        prompt: Union[str, List[str], List[int], List[List[int]], None],
         best_of: Optional[int] | NotGiven = NOT_GIVEN,
         echo: Optional[bool] | NotGiven = NOT_GIVEN,
         frequency_penalty: Optional[float] | NotGiven = NOT_GIVEN,

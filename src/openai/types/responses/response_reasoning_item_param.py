@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Iterable
+from typing import List
 from typing_extensions import Literal, Required, TypedDict
 
 __all__ = ["ResponseReasoningItemParam", "Summary"]
@@ -22,7 +22,7 @@ class ResponseReasoningItemParam(TypedDict, total=False):
     id: Required[str]
     """The unique identifier of the reasoning content."""
 
-    summary: Required[Iterable[Summary]]
+    summary: Required[List[Summary]]
     """Reasoning text contents."""
 
     type: Required[Literal["reasoning"]]

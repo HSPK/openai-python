@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import List, Union, Iterable
+from typing import List, Union, List
 from typing_extensions import Required, TypedDict
 
 from .moderation_model import ModerationModel
@@ -12,7 +12,7 @@ __all__ = ["ModerationCreateParams"]
 
 
 class ModerationCreateParams(TypedDict, total=False):
-    input: Required[Union[str, List[str], Iterable[ModerationMultiModalInputParam]]]
+    input: Required[Union[str, List[str], List[ModerationMultiModalInputParam]]]
     """Input (or inputs) to classify.
 
     Can be a single string, an array of strings, or an array of multi-modal input

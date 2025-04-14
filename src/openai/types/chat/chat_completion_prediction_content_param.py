@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Union, Iterable
+from typing import Union, List
 from typing_extensions import Literal, Required, TypedDict
 
 from .chat_completion_content_part_text_param import ChatCompletionContentPartTextParam
@@ -11,7 +11,7 @@ __all__ = ["ChatCompletionPredictionContentParam"]
 
 
 class ChatCompletionPredictionContentParam(TypedDict, total=False):
-    content: Required[Union[str, Iterable[ChatCompletionContentPartTextParam]]]
+    content: Required[Union[str, List[ChatCompletionContentPartTextParam]]]
     """
     The content that should be matched when generating a model response. If
     generated tokens would match this content, the entire model response can be

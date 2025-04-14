@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import List, Union, Iterable, Optional
+from typing import List, Union, List, Optional
 from typing_extensions import Literal, TypedDict
 
 from .assistant_tool_param import AssistantToolParam
@@ -128,7 +128,7 @@ class AssistantUpdateParams(TypedDict, total=False):
     tool requires a list of vector store IDs.
     """
 
-    tools: Iterable[AssistantToolParam]
+    tools: List[AssistantToolParam]
     """A list of tool enabled on the assistant.
 
     There can be a maximum of 128 tools per assistant. Tools can be of types
